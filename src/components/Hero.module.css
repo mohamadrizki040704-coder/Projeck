@@ -1,0 +1,584 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 900px;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    #ffc04e 0%,
+    #fff0d2 35%,
+    #ffad00 100%
+  );
+  color: #17120b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Background bagian atas */
+.sky {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 35%;
+  z-index: -1;
+  background: linear-gradient(110deg, #ffb52e, #fff0d2);
+}
+
+/* Gambar latar landmark */
+.landmark {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.35;
+  filter: blur(2px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Mangga dekorasi sisi kiri */
+.sideMangoLeft {
+  position: absolute;
+  top: 6%;
+  left: -220px;
+  width: 400px;
+  height: auto;
+  object-fit: contain;
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* Mangga dekorasi sisi kanan */
+.sideMangoRight {
+  position: absolute;
+  right: -160px;
+  bottom: 2%;
+  width: 600px;
+  height: auto;
+  object-fit: contain;
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Sambutan di bagian atas */
+.welcome {
+  position: absolute;
+  top: 12%;
+  left: 5%;
+  z-index: 2;
+  width: 58%;
+  color: #fff;
+  font-size: clamp(34px, 5vw, 68px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Kartu oranye di belakang gambar utama */
+.orangeCard {
+  position: absolute;
+  z-index: 1;
+  top: 29%;
+  right: 7%;
+  width: 38%;
+  height: 47%;
+  border-radius: 40px;
+  background: linear-gradient(145deg, #ff951e, #ff790d);
+  box-shadow: 0 20px 40px rgb(92 47 0 / 20%);
+}
+
+/* Panel putih utama */
+.whitePanel {
+  position: absolute;
+  z-index: 2;
+  top: 34%;
+  left: 0;
+  width: 61.5%;
+  min-height: 45%;
+  padding: 24px 3.5% 35px;
+  background: #fff;
+  border-radius: 0 0 55px 0;
+  box-shadow: 0 12px 30px rgb(80 50 0 / 8%);
+}
+
+/* Nama merek */
+.brandName {
+  margin: 0;
+  color: #080808;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4.7vw, 72px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+/* Tulisan REANG */
+.brandReang {
+  margin: 0;
+  color: #ffa000;
+  font-size: clamp(70px, 9vw, 130px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: clamp(8px, 2.8vw, 38px);
+  text-shadow: 8px 10px 18px rgb(0 0 0 / 12%);
+  white-space: nowrap;
+}
+
+/* Garis oranye di bawah REANG */
+.brandUnderline {
+  width: 100%;
+  height: 7px;
+  margin-top: 0;
+  background: #ffa000;
+}
+
+/* Deskripsi merek */
+.description {
+  margin: 24px 0 0;
+  color: #101010;
+  font-size: clamp(17px, 2.5vw, 36px);
+  font-weight: 400;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+/* Dua mangga blur di belakang mangga utama
+   (z-index 2: di atas orangeCard, di bawah heroMango) */
+.backMangoTop {
+  position: absolute;
+  z-index: 2;
+  top: -5%;
+  right: 0%;
+  width: 600px;
+  height: auto;
+  object-fit: contain;
+  filter: blur(7px);
+  opacity: 0.85;
+  transform: rotate(18deg);
+  pointer-events: none;
+}
+
+.backMangoBottom {
+  position: absolute;
+  z-index: 2;
+  top: 13%;
+  right: 23%;
+  width: 400px;
+  height: auto;
+  object-fit: contain;
+  filter: blur(9px);
+  opacity: 0.85;
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+
+/* Gambar mangga utama */
+.heroMango {
+  position: absolute;
+  z-index: 3;
+  top: 20%;
+  right: 8%;
+  width: min(37vw, 540px);
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  filter: drop-shadow(0 16px 14px rgb(80 40 0 / 20%));
+  pointer-events: none;
+}
+
+/* Tautan belanja untuk perangkat kecil */
+.mobileShopLink {
+  display: none;
+}
+
+/* Strip bawah: gradasi memudar ke oranye + shadow oranye */
+.bottomStrip {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  min-height: 7px;
+  background: linear-gradient(
+    180deg,
+    rgb(255 160 0 / 0%) 0%,
+    rgb(255 160 0 / 55%) 45%,
+    #ffa000 100%
+  );
+  box-shadow: 0 -24px 48px rgb(255 152 0 / 45%);
+  pointer-events: none;
+}
+
+/* Slogan bagian bawah */
+.tagline {
+  position: absolute;
+  z-index: 2;
+  bottom: 28%;
+  left: 2%;
+  width: 96%;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(12px, 2vw, 28px);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: clamp(2px, 0.7vw, 8px);
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 2px 6px rgb(120 60 0 / 35%);
+}
+
+/* Pemisah baris untuk desktop */
+.desktopBreak {
+  display: block;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 760px;
+  }
+
+  .welcome {
+    top: 14%;
+    left: 8%;
+    width: 68%;
+    font-size: clamp(34px, 5.5vw, 56px);
+  }
+
+  .whitePanel {
+    top: 36%;
+    width: 68%;
+    padding: 24px 3% 30px;
+  }
+
+  .brandName {
+    font-size: clamp(30px, 4.8vw, 54px);
+  }
+
+  .brandReang {
+    font-size: clamp(65px, 9vw, 100px);
+    letter-spacing: clamp(8px, 2vw, 24px);
+  }
+
+  .description {
+    font-size: clamp(17px, 2.6vw, 27px);
+  }
+
+  .heroMango {
+    top: 24%;
+    right: 2%;
+    width: 40vw;
+  }
+
+  .orangeCard {
+    right: 3%;
+    width: 39%;
+    height: 40%;
+    top: 32%;
+  }
+
+  .backMangoTop {
+    top: 27%;
+    right: -3%;
+    width: 18vw;
+  }
+
+  .backMangoBottom {
+    top: 46%;
+    right: -6%;
+    width: 26vw;
+  }
+}
+
+/* Ponsel */
+@media (max-width: 640px) {
+  .hero {
+    height: auto;
+    min-height: 820px;
+    padding-bottom: 30px;
+  }
+
+  .sky {
+    height: 34%;
+  }
+
+  .landmark {
+    top: 4%;
+    left: 25%;
+    width: 55%;
+    height: 30%;
+  }
+
+  .sideMangoLeft {
+    top: 14%;
+    left: -45px;
+    width: 115px;
+  }
+
+  .sideMangoRight {
+    right: -60px;
+    bottom: 6%;
+    width: 190px;
+  }
+
+  .welcome {
+    top: 11%;
+    left: 7%;
+    width: 88%;
+    font-size: clamp(30px, 8vw, 44px);
+    line-height: 1.2;
+  }
+
+  .orangeCard {
+    top: 35%;
+    right: 4%;
+    width: 65%;
+    height: 31%;
+    border-radius: 28px;
+  }
+
+  .whitePanel {
+    top: 33%;
+    left: 0;
+    width: 92%;
+    min-height: 40%;
+    padding: 22px 5% 26px;
+    border-radius: 0 0 35px 0;
+  }
+
+  .brandName {
+    font-size: clamp(27px, 7.5vw, 43px);
+    letter-spacing: 0;
+  }
+
+  .brandReang {
+    font-size: clamp(60px, 16vw, 88px);
+    letter-spacing: clamp(5px, 2vw, 12px);
+  }
+
+  .brandUnderline {
+    height: 5px;
+  }
+
+  .description {
+    margin-top: 18px;
+    font-size: clamp(15px, 4vw, 20px);
+    line-height: 1.45;
+  }
+
+  .heroMango {
+    top: 51%;
+    right: 1%;
+    width: 58%;
+    max-width: 310px;
+  }
+
+  .backMangoTop {
+    top: 46%;
+    right: -8%;
+    width: 30%;
+    filter: blur(5px);
+  }
+
+  .backMangoBottom {
+    top: 60%;
+    right: -12%;
+    width: 38%;
+    filter: blur(6px);
+  }
+
+  .mobileShopLink {
+    display: inline-block;
+    position: absolute;
+    z-index: 5;
+    right: 7%;
+    bottom: 15%;
+    padding: 12px 22px;
+    border-radius: 25px;
+    background: #ff9800;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .bottomStrip {
+    height: 16%;
+  }
+
+  .tagline {
+    bottom: 26%;
+    left: 5%;
+    width: 90%;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .desktopBreak {
+    display: none;
+  }
+}
+
+/* =========================================
+   RESPONSIF HP (tambahan; desktop tidak berubah)
+========================================= */
+@media (max-width: 640px) {
+  /* ---------- HERO ---------- */
+  .hero {
+    min-height: 900px;
+  }
+
+  /* Sambutan: dikasih ruang di kiri supaya tidak ketimpa mangga, dan dibesarkan */
+  .welcomeMobile {
+    position: relative;
+    z-index: 6;
+    padding: 0 16px 0 52px;
+  }
+
+  .welcomeMobile p {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .welcomeMobile h1 {
+    font-size: clamp(26px, 7.4vw, 38px);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgb(120 60 0 / 35%);
+  }
+
+  .sideMangoLeft {
+    top: 15%;
+    left: -82px;
+    width: 120px;
+  }
+
+  /* Panel putih: ruang di bawah untuk tombol */
+  .whitePanel {
+    top: 285px;
+    min-height: 0;
+    padding-bottom: 86px;
+  }
+
+  .orangeCard {
+    top: 310px;
+    height: 275px;
+  }
+
+  /* Tombol dipindah ke kiri bawah supaya tidak tertutup mangga */
+  .mobileShopLink {
+    left: 5%;
+    right: auto;
+    bottom: 24px;
+    padding: 11px 20px;
+    font-size: 14px;
+  }
+
+  /* Mangga utama: turun & mengecil, di bawah deskripsi */
+  .heroMango {
+    top: 520px;
+    right: 2%;
+    width: 52%;
+    max-width: 260px;
+  }
+
+  .backMangoTop {
+    top: 505px;
+  }
+
+  .backMangoBottom {
+    top: 610px;
+  }
+
+  .sideMangoRight {
+    bottom: 3%;
+  }
+
+  .tagline {
+    font-size: 10.5px;
+    letter-spacing: 1.2px;
+    text-wrap: balance;
+  }
+}
+
+
+/* ---------- ALUR (bagian "Gimana sih cara ordernya??") ---------- */
+@media (max-width: 640px) {
+  .alurSection {
+    min-height: 0;
+    padding-bottom: 100px;
+  }
+
+  .alurInner {
+    padding: 40px 16px 0;
+  }
+
+  .alurLogo {
+    width: 48vw;
+  }
+
+  .alurDivider {
+    width: 2px;
+    height: auto;
+    align-self: stretch;
+    margin: 0 2.5vw;
+  }
+
+  .alurTitle {
+    font-size: 12vw !important;
+    letter-spacing: 0 !important;
+  }
+
+  .alurSub {
+    width: 100%;
+    margin-top: 16px;
+    font-size: 10px !important;
+    letter-spacing: 0.14em !important;
+    line-height: 1.55 !important;
+    text-wrap: balance;
+  }
+
+  .alurAsk {
+    margin-top: 18px;
+    font-size: 7vw !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1.3 !important;
+  }
+
+  .alurCard {
+    width: 100%;
+    margin-top: 16px;
+    padding: 22px 16px 28px !important;
+    border-radius: 24px !important;
+  }
+
+  .alurList {
+    font-size: 12.5px !important;
+    letter-spacing: 0.06em !important;
+    line-height: 1.6 !important;
+  }
+
+  .alurItem + .alurItem {
+    margin-top: 9px;
+  }
+
+  .alurItem > span:first-child {
+    margin-right: 8px;
+  }
+
+  /* mangga dipindah ke kanan bawah (di area kosong di bawah kartu) */
+  .alurMangoImg {
+    top: auto;
+    bottom: 6px;
+    right: 3vw;
+    width: 34vw;
+    max-width: 170px;
+  }
+}
