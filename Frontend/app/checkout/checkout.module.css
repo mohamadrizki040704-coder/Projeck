@@ -1,0 +1,971 @@
+
+/* ==============================
+   CHECKOUT PAGE
+============================== */
+
+.checkoutPage {
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px 28px 60px;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* ==============================
+   HEADER
+============================== */
+
+.header {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 205px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.brand {
+  width: 37%;
+  padding-top: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.brandTitle {
+  font-family: Georgia, serif;
+  font-size: clamp(23px, 3.2vw, 47px);
+  letter-spacing: 3px;
+  white-space: nowrap;
+  color: #000;
+}
+
+.brandName {
+  font-size: clamp(45px, 6vw, 87px);
+  font-weight: 900;
+  letter-spacing: 25px;
+  line-height: 1.05;
+  color: #ffa000;
+  text-shadow: 8px 10px 15px #00000025;
+}
+
+.brandLine {
+  width: 100%;
+  height: 7px;
+  background: #ffa000;
+  margin-top: 12px;
+}
+
+.heading {
+  border-left: 7px solid #000;
+  padding-left: 15px;
+  margin-top: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.heading h1 {
+  margin: 0;
+  font-size: clamp(40px, 5.8vw, 83px);
+  font-weight: 1000;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: #000;
+  white-space: nowrap;
+}
+
+.heading p {
+  margin: 7px 0 0;
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 3.5vw, 50px);
+  letter-spacing: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.headerMango {
+  position: absolute;
+  width: 250px;
+  height: 240px;
+  object-fit: contain;
+  right: 35px;
+  top: -20px;
+  z-index: 3;
+  filter: drop-shadow(15px 18px 15px #00000030);
+}
+
+/* ==============================
+   MAIN CHECKOUT CONTAINER
+============================== */
+
+.checkoutContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 700px;
+  margin: 22px auto 0;
+  padding: 38px 55px 45px;
+  box-sizing: border-box;
+
+  background: #ffa000;
+  border-radius: 65px 65px 0 0;
+
+  box-shadow:
+    0 -12px 30px #ffb00075,
+    0 0 35px #ffbd2480;
+
+  overflow: hidden;
+}
+
+/* ==============================
+   TABLE HEADER
+============================== */
+
+.tableHeader {
+  position: absolute;
+  top: 5px;
+  right: 13%;
+  display: flex;
+  gap: 48px;
+  color: #fff;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ==============================
+   PRODUCT CARD
+============================== */
+
+.productCard {
+  width: 100%;
+  min-height: 268px;
+  padding: 14px 30px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  background: #ffa000;
+  border: 10px solid #d58b00;
+  border-radius: 50px;
+
+  box-shadow:
+    inset 0 3px 5px #ffffff35,
+    inset 0 -3px 5px #b8790040,
+    0 3px 8px #00000015;
+
+  position: relative;
+}
+
+/* PRODUCT IMAGE */
+
+.productImageWrapper {
+  flex-shrink: 0;
+  width: 278px;
+  height: 235px;
+  border-radius: 40px;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productImage {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+/* PRODUCT INFORMATION */
+
+.productInformation {
+  flex: 1;
+  min-width: 200px;
+  align-self: flex-start;
+  padding-top: 12px;
+}
+
+.productInformation h2 {
+  font-size: clamp(20px, 2.5vw, 38px);
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.productPrice {
+  margin: 0 0 10px;
+  color: #000;
+  font-size: clamp(22px, 2.5vw, 36px);
+  font-family: monospace;
+  font-weight: 900;
+}
+
+.supplier {
+  color: #fff;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 7px 0;
+}
+
+/* ==============================
+   QUANTITY CONTROL
+============================== */
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-right: 10px;
+}
+
+.quantityButton {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 38px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.quantityButton:hover {
+  color: #ffe600;
+  transform: scale(1.2);
+}
+
+.quantityInput {
+  width: 120px;
+  height: 48px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  background: #fff;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
+
+.quantityInput::-webkit-inner-spin-button,
+.quantityInput::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.unit {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.itemTotal {
+  min-width: 110px;
+  text-align: right;
+  font-size: 19px;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* ==============================
+   ADDRESS SECTION
+============================== */
+
+.addressSection {
+  margin-top: 30px;
+}
+
+.addressSection h3,
+.paymentSection h3 {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+}
+
+.addressRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 17px;
+}
+
+.addressRow label {
+  flex: 0 0 300px;
+  color: #000;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.customerInput,
+.addressInput,
+.addressDisplay {
+  flex: 1;
+  min-width: 0;
+  height: 34px;
+  border: none;
+  border-radius: 12px;
+  padding: 0 13px;
+  background: #fff;
+  color: #000;
+  font-size: 22px;
+  font-weight: 600;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.addressDisplay {
+  display: flex;
+  align-items: center;
+}
+
+.editAddressButton {
+  flex-shrink: 0;
+  padding: 9px 12px;
+  border: 2px solid #d18a00;
+  border-radius: 16px;
+  background: #ffa900;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+
+  box-shadow: 0 3px 5px #00000030;
+  transition: 0.25s;
+}
+
+.editAddressButton:hover {
+  background: #ffbd24;
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   PAYMENT SECTION
+============================== */
+
+.paymentSection {
+  margin-top: 28px;
+}
+
+.paymentSection h3 {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.paymentOptions {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 17px;
+}
+
+.paymentButton {
+  min-width: 95px;
+  height: 43px;
+  padding: 0 14px;
+
+  border: 2px solid transparent;
+  border-radius: 15px;
+  background: #fff;
+  color: #000;
+
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.paymentButton:hover {
+  background: #fff2c4;
+  transform: translateY(-3px);
+}
+
+.paymentActive {
+  background: #ffe500;
+  border-color: #000;
+  box-shadow: 0 0 10px #ffffff90;
+}
+
+/* ==============================
+   TOTAL & CHECKOUT BUTTON
+============================== */
+
+.totalSection {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  margin-top: 65px;
+}
+
+.totalInformation {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.totalInformation strong {
+  color: #000;
+  font-size: 25px;
+}
+
+.checkoutButton {
+  padding: 7px 10px;
+  border: none;
+  border-radius: 17px;
+  background: #00e900;
+  color: #000;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.checkoutButton:hover {
+  background: #00ff00;
+  transform: scale(1.06);
+  box-shadow: 0 5px 15px #00000030;
+}
+
+/* ==============================
+   RESPONSIVE TABLET
+============================== */
+
+@media (max-width: 1000px) {
+  .header {
+    min-height: 160px;
+  }
+
+  .brand {
+    width: 38%;
+  }
+
+  .brandName {
+    letter-spacing: 12px;
+  }
+
+  .headerMango {
+    width: 170px;
+    height: 170px;
+    right: 0;
+  }
+
+  .checkoutContainer {
+    padding: 38px 25px;
+  }
+
+  .productCard {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .productImageWrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .quantityInput {
+    width: 75px;
+  }
+
+  .addressRow label {
+    flex-basis: 220px;
+    font-size: 18px;
+  }
+}
+
+/* ==============================
+   RESPONSIVE MOBILE
+============================== */
+
+@media (max-width: 650px) {
+  .checkoutPage {
+    padding: 12px 10px 30px;
+  }
+
+  .header {
+    min-height: 125px;
+    align-items: flex-start;
+  }
+
+  .brand {
+    width: 48%;
+    padding-top: 10px;
+  }
+
+  .brandTitle {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+
+  .brandName {
+    font-size: 38px;
+    letter-spacing: 8px;
+  }
+
+  .brandLine {
+    height: 4px;
+  }
+
+  .heading {
+    border-left-width: 4px;
+    padding-left: 8px;
+    margin-top: 25px;
+  }
+
+  .heading h1 {
+    font-size: 28px;
+  }
+
+  .heading p {
+    font-size: 16px;
+    letter-spacing: 7px;
+  }
+
+  .headerMango {
+    width: 85px;
+    height: 85px;
+    right: 0;
+    top: 0;
+  }
+
+  .checkoutContainer {
+    margin-top: 10px;
+    padding: 35px 15px;
+    border-radius: 35px 35px 0 0;
+  }
+
+  .tableHeader {
+    display: none;
+  }
+
+  .productCard {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    border-width: 6px;
+    border-radius: 30px;
+    gap: 12px;
+  }
+
+  .productImageWrapper {
+    width: 100%;
+    height: 180px;
+    border-radius: 22px;
+  }
+
+  .productInformation {
+    padding-top: 0;
+  }
+
+  .productInformation h2 {
+    font-size: 23px;
+  }
+
+  .productPrice {
+    font-size: 24px;
+  }
+
+  .supplier {
+    font-size: 16px;
+  }
+
+  .quantityControl {
+    margin: 0;
+  }
+
+  .quantityButton {
+    font-size: 30px;
+  }
+
+  .quantityInput {
+    width: 100px;
+  }
+
+  .unit,
+  .itemTotal {
+    font-size: 17px;
+  }
+
+  .addressSection h3,
+  .paymentSection h3 {
+    font-size: 19px;
+  }
+
+  .addressRow {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .addressRow label {
+    flex: 0 0 100%;
+    font-size: 16px;
+  }
+
+  .customerInput,
+  .addressInput,
+  .addressDisplay {
+    flex: 1 1 100%;
+    font-size: 16px;
+  }
+
+  .editAddressButton {
+    font-size: 12px;
+  }
+
+  .paymentSection h3 {
+    display: block;
+  }
+
+  .paymentOptions {
+    gap: 8px;
+  }
+
+  .paymentButton {
+    min-width: 75px;
+    height: 38px;
+    font-size: 12px;
+  }
+
+  .totalSection {
+    margin-top: 35px;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .checkoutButton {
+    font-size: 18px;
+  }
+}
+
+/* ==============================
+   CHECKOUT FIXES
+   Tempel di PALING BAWAH file CSS checkout
+============================== */
+
+/* --- Header: mangga tidak lagi menimpa nama user & keranjang --- */
+.header {
+  padding-top: 12px;
+}
+
+.heading {
+  margin-top: 35px;
+}
+
+.headerMango {
+  top: 55px;
+  right: 40px;
+  width: 200px;
+  height: 180px;
+  z-index: 1;
+}
+
+/* --- Jumlah: urutan jadi  [ − ] [ 1 ] [ + ]  --- */
+.quantityControl {
+  flex-direction: row-reverse;
+}
+
+.quantityButton {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.quantityButton:hover {
+  background: #ffffff30;
+}
+
+.quantityButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --- Form alamat: input lebih tinggi & terbaca --- */
+.customerInput,
+.addressInput,
+.addressDisplay {
+  height: 48px;
+  font-size: 20px;
+}
+
+.customerInput::placeholder,
+.addressInput::placeholder {
+  color: #9a9a9a;
+  font-weight: 500;
+}
+
+.customerInput:focus,
+.addressInput:focus {
+  box-shadow: 0 0 0 4px #ffffff70;
+}
+
+.addressDisplay {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  line-height: 48px;
+}
+
+.editAddressButton {
+  height: 48px;
+}
+
+/* --- Metode pembayaran --- */
+.paymentButton {
+  height: 46px;
+  font-size: 15px;
+}
+
+.paymentButton:focus-visible,
+.checkoutButton:focus-visible,
+.editAddressButton:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+}
+
+/* --- Tombol bayar --- */
+.checkoutButton {
+  padding: 12px 30px;
+}
+
+.checkoutButton:disabled {
+  background: #9bd89b;
+  color: #00000070;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* --- Pesan error / kosong (opsional dipakai di TSX) --- */
+.errorText {
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #fff;
+  color: #b00020;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.emptyState {
+  padding: 40px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1000px) {
+  .headerMango {
+    top: 45px;
+    right: 0;
+    width: 140px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 650px) {
+  .headerMango {
+    top: 55px;
+    width: 80px;
+    height: 75px;
+  }
+
+  .customerInput,
+  .addressInput,
+  .addressDisplay {
+    height: 42px;
+    line-height: 42px;
+    font-size: 16px;
+  }
+
+  .editAddressButton {
+    height: 42px;
+  }
+
+  .checkoutButton {
+    width: 100%;
+  }
+}
+
+/* ==============================
+   CHECKOUT FIXES 2
+   Tempel di PALING BAWAH file CSS checkout
+   (di bawah isi checkout-fixes.css)
+============================== */
+
+/* --- Lebar kolom: dipakai bersama oleh header tabel & baris produk --- */
+.checkoutContainer {
+  --qty-w: 240px;
+  --unit-w: 90px;
+  --total-w: 160px;
+  --col-gap: 30px;
+}
+
+/* --- Baris produk: kolom dengan lebar tetap --- */
+.productCard {
+  gap: var(--col-gap);
+}
+
+.quantityControl {
+  width: var(--qty-w);
+  flex-shrink: 0;
+  justify-content: center;
+  margin: 0;
+}
+
+.unit {
+  width: var(--unit-w);
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.itemTotal {
+  width: var(--total-w);
+  min-width: 0;
+  flex-shrink: 0;
+  text-align: right;
+  font-size: 22px;
+  white-space: nowrap;
+}
+
+/* --- Header tabel: tepat di atas kolom masing-masing --- */
+.tableHeader {
+  top: 10px;
+  /* padding container (55) + border kartu (10) + padding kartu (30) */
+  right: 95px;
+  gap: var(--col-gap);
+  font-size: 20px;
+}
+
+.tableHeader > * {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.tableHeader > :nth-child(1) {
+  width: var(--qty-w);
+}
+
+.tableHeader > :nth-child(2) {
+  width: var(--unit-w);
+}
+
+.tableHeader > :nth-child(3) {
+  width: var(--total-w);
+  text-align: right;
+}
+
+/* --- Tombol + / − lebih besar & seimbang --- */
+.quantityButton {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+/* --- Header: mangga tidak menyentuh KERANJANG --- */
+.headerMango {
+  top: 78px;
+  right: 50px;
+  width: 180px;
+  height: 160px;
+}
+
+/* --- Garis hitam vertikal sejajar dengan garis oranye --- */
+.heading {
+  margin-top: 22px;
+}
+
+.heading p {
+  margin-top: 4px;
+  line-height: 1;
+}
+
+.heading h1 {
+  line-height: 0.95;
+}
+
+/* --- Info produk --- */
+.productInformation h2 {
+  word-break: break-word;
+}
+
+/* ==============================
+   TABLET
+============================== */
+@media (max-width: 1000px) {
+  .checkoutContainer {
+    --qty-w: 200px;
+    --unit-w: 60px;
+    --total-w: 120px;
+    --col-gap: 15px;
+  }
+
+  .tableHeader {
+    /* padding container (25) + border kartu (10) + padding kartu (15) */
+    right: 50px;
+    font-size: 16px;
+  }
+
+  .itemTotal {
+    font-size: 18px;
+  }
+
+  .headerMango {
+    top: 60px;
+    right: 0;
+    width: 130px;
+    height: 120px;
+  }
+}
+
+/* ==============================
+   MOBILE
+============================== */
+@media (max-width: 650px) {
+  .checkoutContainer {
+    --qty-w: auto;
+    --unit-w: auto;
+    --total-w: auto;
+  }
+
+  .quantityControl {
+    justify-content: flex-start;
+  }
+
+  .unit,
+  .itemTotal {
+    text-align: left;
+  }
+
+  .quantityButton {
+    font-size: 36px;
+  }
+
+  .headerMango {
+    top: 60px;
+    width: 75px;
+    height: 70px;
+  }
+}

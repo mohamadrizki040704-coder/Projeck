@@ -1,0 +1,185 @@
+/* =========================================
+   SIGNUP CARD
+========================================= */
+
+.signupCard {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+
+  transform-origin: center;
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s ease;
+
+  box-shadow:
+    0 25px 70px rgba(120, 65, 0, 0.18),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* =========================================
+   CARD ENTRANCE
+========================================= */
+
+.cardVisible {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  animation:
+    signupEntrance 0.9s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    both;
+}
+
+.cardHidden {
+  opacity: 0;
+
+  transform:
+    translateY(60px)
+    scale(0.92);
+
+  pointer-events: none;
+}
+
+@keyframes signupEntrance {
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(70px)
+      scale(0.88);
+
+    filter: blur(10px);
+  }
+
+  70% {
+    opacity: 1;
+
+    transform:
+      translateY(-5px)
+      scale(1.01);
+
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+    filter: blur(0);
+  }
+}
+
+/* =========================================
+   MANGO FLOATING
+========================================= */
+
+.mangoFloat {
+  animation:
+    mangoFloating 5s ease-in-out infinite;
+
+  transform-origin: center;
+}
+
+@keyframes mangoFloating {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  25% {
+    transform:
+      translateY(-8px)
+      rotate(-2deg);
+  }
+
+  50% {
+    transform:
+      translateY(-14px)
+      rotate(2deg);
+  }
+
+  75% {
+    transform:
+      translateY(-6px)
+      rotate(-1deg);
+  }
+}
+
+/* =========================================
+   SOCIAL BUTTON
+========================================= */
+
+.socialButton {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.socialButton::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.6s ease;
+
+  z-index: -1;
+}
+
+.socialButton:hover::before {
+  left: 150%;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 640px) {
+  .signupCard {
+    border-radius: 25px;
+
+    min-height: auto;
+  }
+
+  .mangoFloat {
+    width: 95px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .signupCard,
+  .mangoFloat,
+  .socialButton {
+    animation: none !important;
+    transition: none !important;
+  }
+}
